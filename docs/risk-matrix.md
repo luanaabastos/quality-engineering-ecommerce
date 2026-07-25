@@ -40,12 +40,13 @@ A classificação orientará a priorização dos testes manuais, de API, integra
 | R07 | Perda de itens do carrinho | Médio | Alta | Alto | Validar persistência por sessão, login, atualização e retorno à aplicação |
 | R08 | Falha na comunicação entre pagamento e pedidos | Alto | Média | Alto | Testar timeout, retry, mensagens e recuperação de falhas |
 | R09 | Cadastro com e-mail duplicado | Médio | Média | Médio | Validar regra de unicidade na API e interface |
-| R10 | Login com credenciais inválidas aceito | Alto | Baixa | Alto | Validar autenticação, mensagens e bloqueios |
+| R10 | Login com credenciais inválidas aceito | Alto | Média | Alto | Validar autenticação, mensagens e bloqueios |
 | R11 | Busca retorna produtos incorretos | Médio | Média | Médio | Validar termos, filtros, ordenação e ausência de resultados |
 | R12 | Cupom inválido ou expirado aplicado | Médio | Média | Médio | Validar datas, regras de elegibilidade e cálculo do desconto |
 | R13 | Pedido duplicado para a mesma transação | Alto | Média | Alto | Validar chave de idempotência e unicidade da transação |
 | R14 | Dados reais utilizados nos testes | Alto | Baixa | Alto | Validar anonimização, massa sintética e configuração dos ambientes |
 | R15 | Testes automatizados instáveis bloqueiam a pipeline | Médio | Média | Médio | Monitorar flakiness, reexecuções e isolamento dos cenários |
+| R16 | Sessão permanece ativa após logout | Alto | Média | Alto | Validar invalidação do token, acesso após logout e expiração da sessão |
 
 ## 4. Priorização dos testes
 
