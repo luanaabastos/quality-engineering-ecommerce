@@ -119,6 +119,9 @@ A estratégia inicial prevê:
 - interface Web para os principais fluxos do usuário;
 - execução automática a cada pull request;
 - suíte de regressão na branch principal.
+- execução de smoke tests após cada implantação em homologação;
+- isolamento dos testes para evitar dependência de ordem de execução;
+- tratamento de testes instáveis antes de incluí-los como bloqueadores do pipeline.
 
 Testes exploratórios, usabilidade e cenários instáveis não serão automatizados apenas para aumentar a quantidade de testes.
 
@@ -173,6 +176,8 @@ A versão poderá ser considerada apta quando:
 - a regressão automatizada estiver aprovada;
 - as evidências estiverem registradas;
 - os stakeholders tiverem conhecimento das limitações restantes.
+- a taxa de falhas causada por testes instáveis estiver dentro do limite definido;
+- os defeitos de alta severidade possuírem plano de correção ou aceite formal de risco.
 
 ## 11. Evidências e relatórios
 
