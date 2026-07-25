@@ -71,6 +71,8 @@ Os fluxos mais importantes do sistema são:
 - O pedido só pode ser confirmado após a aprovação do pagamento.
 - O cliente só pode visualizar seus próprios pedidos.
 - O estoque deve ser atualizado após a confirmação da compra.
+- O carrinho deve preservar os itens durante a sessão do usuário.
+- Uma mesma transação de pagamento não pode gerar mais de um pedido.
 
 ## 6. Integrações previstas
 
