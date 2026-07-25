@@ -21,7 +21,9 @@ Cada cenário contém:
 ### TS-001 — Calcular corretamente o valor total do pedido
 
 **Prioridade:** P0  
+
 **Risco relacionado:** R01 — Cobrança com valor incorreto  
+
 **Camada recomendada:** API e E2E
 
 **Pré-condições:**
