@@ -1,0 +1,17 @@
+{
+  "name": "quality-engineering-ecommerce",
+  "version": "1.0.0",
+  "description": "Case completo de Quality Engineering aplicado a uma plataforma de e-commerce, com foco em estratégia de qualidade, análise de riscos, cenários de teste, automação Web e API e integração contínua.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^26.1.1"
+  }
+}
