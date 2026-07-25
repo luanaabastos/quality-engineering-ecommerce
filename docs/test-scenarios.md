@@ -46,7 +46,7 @@ Cenário: Calcular o valor total com produto, quantidade, desconto e frete
   ```
 
 **Resultado esperado:**  
-O sistema deve calcular corretamente o subtotal, o desconto, o frete e o valor total do pedido, exibindo o valor final de R$ 200,00.
+O sistema deve calcular o subtotal dos produtos em R$ 200,00, aplicar R$ 20,00 de desconto, adicionar R$ 20,00 de frete e exibir o valor total de R$ 200,00.
 
 
   ### TS-002 — Impedir cobrança duplicada
@@ -182,7 +182,7 @@ Cenário: Usuário tenta acessar pedido de outro cliente
 ```
 
 **Resultado esperado:**  
-O acesso deve ser negado, nenhum dado do pedido deve ser exibido e a API deve retornar o status de autorização adequado.
+O acesso deve ser negado, nenhum dado do pedido deve ser exibido e a API deve retornar HTTP 403. Caso o sistema não revele a existência do recurso, poderá retornar HTTP 404.
 
 ---
 
@@ -203,6 +203,10 @@ Cenário: Cadastrar usuário com dados válidos
   Então a conta deve ser criada com sucesso
   E o usuário deve poder realizar login
 ```
+
+**Resultado esperado:**  
+A conta deve ser criada com sucesso e o usuário deve conseguir realizar login com as credenciais cadastradas.
+
 
 ### TS-008 — Impedir cadastro com e-mail duplicado
 
@@ -342,7 +346,7 @@ Cenário: Tentar acessar área autenticada após logout
 ```
 
 **Resultado esperado:**  
-A sessão e o token anterior devem ser invalidados, e qualquer tentativa de acessar uma área protegida deve redirecionar o usuário para o login.
+A sessão e o token anterior devem ser invalidados. O acesso às áreas protegidas deve ser negado, e o usuário deve ser redirecionado para a tela de login.
 
 
 ## 4. Critérios para automação
