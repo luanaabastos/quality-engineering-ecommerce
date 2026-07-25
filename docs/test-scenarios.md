@@ -45,6 +45,10 @@ Cenário: Calcular o valor total com produto, quantidade, desconto e frete
   E o valor total deve ser de R$ 200,00 
   ```
 
+**Resultado esperado:**  
+O sistema deve calcular corretamente o subtotal, o desconto, o frete e o valor total do pedido, exibindo o valor final de R$ 200,00.
+
+
   ### TS-002 — Impedir cobrança duplicada
 
 **Prioridade:** P0
@@ -68,6 +72,11 @@ Cenário: Reenviar a mesma transação de pagamento
   E apenas um pedido deve ser confirmado
   E a segunda requisição deve retornar o mesmo resultado da primeira
   ```
+
+**Resultado esperado:**  
+O sistema deve registrar apenas uma cobrança e confirmar apenas um pedido, mesmo quando a mesma transação for reenviada.
+
+
   ### TS-003 — Impedir compra de produto sem estoque
 
 **Prioridade:** P0
@@ -90,8 +99,9 @@ Cenário: Tentar adicionar produto sem estoque ao carrinho
   E o carrinho não deve ser alterado
  ```
 
-Resultado esperado:
-Produtos indisponíveis não podem ser adicionados nem comprados.
+**Resultado esperado:**  
+O produto sem estoque não deve ser adicionado ao carrinho, e o usuário deve receber uma mensagem informando sua indisponibilidade.
+
 
 ### TS-004 — Atualizar o estoque após compra confirmada
 
@@ -116,8 +126,9 @@ Cenário: Atualizar estoque após confirmação da compra
   E a alteração deve estar disponível no catálogo
 ```
 
-Resultado esperado:
-O estoque deve refletir corretamente a quantidade adquirida.
+**Resultado esperado:**  
+O estoque deve ser reduzido de acordo com a quantidade comprada e o novo saldo deve ficar disponível no catálogo.
+
 
 ### TS-005 — Não confirmar pedido com pagamento recusado
 
@@ -143,8 +154,9 @@ Cenário: Recusar confirmação do pedido quando o pagamento falhar
   E o usuário deve receber uma mensagem de falha
 ```
 
-Resultado esperado:
-Nenhum pedido pode ser confirmado sem pagamento aprovado.
+**Resultado esperado:**  
+O pedido não deve ser confirmado, o estoque não deve ser alterado e o usuário deve receber uma mensagem informando a falha no pagamento.
+
 
 ### TS-006 — Impedir acesso ao pedido de outro cliente
 
@@ -169,8 +181,8 @@ Cenário: Usuário tenta acessar pedido de outro cliente
   E a API deve retornar o status apropriado de autorização
 ```
 
-Resultado esperado:
-Cada cliente deve acessar somente seus próprios pedidos.
+**Resultado esperado:**  
+O acesso deve ser negado, nenhum dado do pedido deve ser exibido e a API deve retornar o status de autorização adequado.
 
 ---
 
@@ -208,6 +220,10 @@ Cenário: Tentar cadastrar um e-mail já utilizado
   E uma mensagem clara deve ser exibida
 ```
 
+**Resultado esperado:**  
+O cadastro deve ser bloqueado, nenhuma nova conta deve ser criada e o usuário deve receber uma mensagem clara sobre o e-mail já cadastrado.
+
+
 ### TS-009 — Realizar login com credenciais válidas
 
 **Prioridade:** P1
@@ -223,6 +239,10 @@ Cenário: Autenticar usuário com credenciais válidas
   Então deve ser autenticado com sucesso
   E deve receber uma sessão válida
 ```
+
+**Resultado esperado:**  
+O usuário deve ser autenticado com sucesso, receber uma sessão válida e acessar as áreas protegidas da aplicação.
+
 
 ### TS-010 — Impedir login com credenciais inválidas
 
@@ -241,6 +261,10 @@ Cenário: Tentar autenticação com senha incorreta
   E uma mensagem segura deve ser exibida
 ```
 
+**Resultado esperado:**  
+A autenticação deve ser recusada, nenhuma sessão deve ser criada e uma mensagem segura deve ser exibida ao usuário.
+
+
 ### TS-011 — Preservar o carrinho durante a sessão
 
 **Prioridade:** P1
@@ -255,6 +279,10 @@ Cenário: Manter os itens ao navegar pela aplicação
   Quando navegar para outras páginas e retornar ao carrinho
   Então os mesmos produtos e quantidades devem permanecer salvos
 ```
+
+**Resultado esperado:**  
+Os produtos e as quantidades adicionados ao carrinho devem permanecer salvos durante a navegação na mesma sessão.
+
 
 ### TS-012 — Aplicar cupom válido
 
@@ -272,6 +300,10 @@ Cenário: Aplicar desconto com cupom válido
   E o valor total deve ser atualizado
 ```
 
+**Resultado esperado:**  
+O desconto deve ser aplicado corretamente e o valor total do pedido deve ser recalculado e exibido ao usuário.
+
+
 ### TS-013 — Rejeitar cupom expirado
 
 **Prioridade**: P1
@@ -287,6 +319,10 @@ Cenário: Tentar aplicar cupom expirado
   Então o desconto não deve ser concedido
   E uma mensagem explicativa deve ser exibida
 ```
+
+**Resultado esperado:**  
+O desconto não deve ser aplicado e o usuário deve receber uma mensagem informando que o cupom está expirado.
+
 
 ### TS-014 — Invalidar a sessão após logout
 
@@ -304,6 +340,10 @@ Cenário: Tentar acessar área autenticada após logout
   Então deve ser redirecionado para o login
   E o token anterior não deve mais ser aceito
 ```
+
+**Resultado esperado:**  
+A sessão e o token anterior devem ser invalidados, e qualquer tentativa de acessar uma área protegida deve redirecionar o usuário para o login.
+
 
 ## 4. Critérios para automação
 
