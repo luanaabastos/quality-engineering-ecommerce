@@ -43,17 +43,19 @@ Cenário: Calcular o valor total com produto, quantidade, desconto e frete
   E o valor total deve ser de R$ 200,00 
   ```
 
-  ###TS-002 — Impedir cobrança duplicada
+  ### TS-002 — Impedir cobrança duplicada
 
-Prioridade: P0
-Risco relacionado: R02 e R13
-Camada recomendada: API e integração
+**Prioridade:** P0
 
-Pré-condições:
+**Risco relacionado:** R02 e R13
 
-usuário autenticado;
-pedido pronto para pagamento;
-meio de pagamento válido.
+**Camada recomendada:** API e integração
+
+**Pré-condições:**
+
+- usuário autenticado;
+- pedido pronto para pagamento;
+- meio de pagamento válido.
 
 ```gherkin
 Cenário: Reenviar a mesma transação de pagamento
@@ -64,16 +66,18 @@ Cenário: Reenviar a mesma transação de pagamento
   E apenas um pedido deve ser confirmado
   E a segunda requisição deve retornar o mesmo resultado da primeira
   ```
-  TS-003 — Impedir compra de produto sem estoque
+  ### TS-003 — Impedir compra de produto sem estoque
 
-Prioridade: P0
-Risco relacionado: R04
-Camada recomendada: API e E2E
+**Prioridade:** P0
 
-Pré-condições:
+**Risco relacionado:** R04
 
-produto com estoque igual a zero;
-usuário autenticado.
+**Camada recomendada:** API e E2E
+
+**Pré-condições:**
+
+- produto com estoque igual a zero;
+- usuário autenticado.
 
 ```gherkin
 Cenário: Tentar adicionar produto sem estoque ao carrinho
@@ -87,17 +91,19 @@ Cenário: Tentar adicionar produto sem estoque ao carrinho
 Resultado esperado:
 Produtos indisponíveis não podem ser adicionados nem comprados.
 
-TS-004 — Atualizar o estoque após compra confirmada
+### TS-004 — Atualizar o estoque após compra confirmada
 
-Prioridade: P0
-Risco relacionado: R05
-Camada recomendada: API e integração
+**Prioridade:** P0
+
+**Risco relacionado:** R05
+
+**Camada recomendada:** API e integração
 
 Pré-condições:
 
-produto com estoque disponível;
-pagamento aprovado;
-pedido confirmado.
+- produto com estoque disponível;
+- pagamento aprovado;
+- pedido confirmado.
 
 ```gherkin
 Cenário: Atualizar estoque após confirmação da compra
@@ -111,17 +117,19 @@ Cenário: Atualizar estoque após confirmação da compra
 Resultado esperado:
 O estoque deve refletir corretamente a quantidade adquirida.
 
-TS-005 — Não confirmar pedido com pagamento recusado
+### TS-005 — Não confirmar pedido com pagamento recusado
 
-Prioridade: P0
-Risco relacionado: R03
-Camada recomendada: API, integração e E2E
+**Prioridade:** P0
 
-Pré-condições:
+**Risco relacionado:** R03
 
-usuário autenticado;
-carrinho válido;
-pagamento configurado para recusa.
+**Camada recomendada:** API, integração e E2E
+
+**Pré-condições:**
+
+- usuário autenticado;
+- carrinho válido;
+- pagamento configurado para recusa.
 
 ```gherkin
 Cenário: Recusar confirmação do pedido quando o pagamento falhar
@@ -136,16 +144,18 @@ Cenário: Recusar confirmação do pedido quando o pagamento falhar
 Resultado esperado:
 Nenhum pedido pode ser confirmado sem pagamento aprovado.
 
-TS-006 — Impedir acesso ao pedido de outro cliente
+### TS-006 — Impedir acesso ao pedido de outro cliente
 
-Prioridade: P0
-Risco relacionado: R06
-Camada recomendada: API e segurança funcional
+**Prioridade:** P0
+
+**Risco relacionado:** R06
+
+**Camada recomendada:** API e segurança funcional
 
 Pré-condições:
 
-dois usuários autenticados;
-pedido pertencente ao usuário A.
+- dois usuários autenticados;
+- pedido pertencente ao usuário A.
 
 ```gherkin
 Cenário: Usuário tenta acessar pedido de outro cliente
@@ -160,12 +170,17 @@ Cenário: Usuário tenta acessar pedido de outro cliente
 Resultado esperado:
 Cada cliente deve acessar somente seus próprios pedidos.
 
-3. Cenários P1
-TS-007 — Cadastrar usuário com e-mail único
+---
 
-Prioridade: P1
-Risco relacionado: R09
-Camada recomendada: API e E2E
+## 3. Cenários P1
+
+### TS-007 — Cadastrar usuário com e-mail único
+
+**Prioridade:** P1
+
+**Risco relacionado:** R09
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Cadastrar usuário com dados válidos
@@ -175,11 +190,13 @@ Cenário: Cadastrar usuário com dados válidos
   E o usuário deve poder realizar login
 ```
 
-TS-008 — Impedir cadastro com e-mail duplicado
+### TS-008 — Impedir cadastro com e-mail duplicado
 
-Prioridade: P1
-Risco relacionado: R09
-Camada recomendada: API e E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R09
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Tentar cadastrar um e-mail já utilizado
@@ -189,11 +206,13 @@ Cenário: Tentar cadastrar um e-mail já utilizado
   E uma mensagem clara deve ser exibida
 ```
 
-TS-009 — Realizar login com credenciais válidas
+### TS-009 — Realizar login com credenciais válidas
 
-Prioridade: P1
-Risco relacionado: R10
-Camada recomendada: API e E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R10
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Autenticar usuário com credenciais válidas
@@ -203,11 +222,13 @@ Cenário: Autenticar usuário com credenciais válidas
   E deve receber uma sessão válida
 ```
 
-TS-010 — Impedir login com credenciais inválidas
+### TS-010 — Impedir login com credenciais inválidas
 
-Prioridade: P1
-Risco relacionado: R10
-Camada recomendada: API e E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R10
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Tentar autenticação com senha incorreta
@@ -218,11 +239,13 @@ Cenário: Tentar autenticação com senha incorreta
   E uma mensagem segura deve ser exibida
 ```
 
-TS-011 — Preservar o carrinho durante a sessão
+### TS-011 — Preservar o carrinho durante a sessão
 
-Prioridade: P1
-Risco relacionado: R07
-Camada recomendada: E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R07
+
+**Camada recomendada:** E2E
 
 ```gherkin
 Cenário: Manter os itens ao navegar pela aplicação
@@ -231,11 +254,13 @@ Cenário: Manter os itens ao navegar pela aplicação
   Então os mesmos produtos e quantidades devem permanecer salvos
 ```
 
-TS-012 — Aplicar cupom válido
+### TS-012 — Aplicar cupom válido
 
-Prioridade: P1
-Risco relacionado: R12
-Camada recomendada: API e E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R12
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Aplicar desconto com cupom válido
@@ -245,11 +270,13 @@ Cenário: Aplicar desconto com cupom válido
   E o valor total deve ser atualizado
 ```
 
-TS-013 — Rejeitar cupom expirado
+### TS-013 — Rejeitar cupom expirado
 
-Prioridade: P1
-Risco relacionado: R12
-Camada recomendada: API e E2E
+**Prioridade**: P1
+
+**Risco relacionado:** R12
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Tentar aplicar cupom expirado
@@ -259,11 +286,13 @@ Cenário: Tentar aplicar cupom expirado
   E uma mensagem explicativa deve ser exibida
 ```
 
-TS-014 — Invalidar a sessão após logout
+### TS-014 — Invalidar a sessão após logout
 
-Prioridade: P1
-Risco relacionado: R16
-Camada recomendada: API e E2E
+**Prioridade:** P1
+
+**Risco relacionado:** R16
+
+**Camada recomendada:** API e E2E
 
 ```gherkin
 Cenário: Tentar acessar área autenticada após logout
@@ -274,41 +303,28 @@ Cenário: Tentar acessar área autenticada após logout
   E o token anterior não deve mais ser aceito
 ```
 
-4. Critérios para automação
+## 4. Critérios para automação
 
 Os cenários deverão ser automatizados quando:
 
-representarem riscos P0 ou P1;
-forem repetitivos;
-possuírem resultado determinístico;
-dependerem de regras de negócio estáveis;
-forem adequados para execução em CI/CD;
-não dependerem de validações exclusivamente visuais ou subjetivas.
-5. Cobertura inicial planejada
-API
-autenticação;
-cadastro;
-cálculo de valores;
-cupons;
-estoque;
-pagamentos;
-pedidos;
-autorização;
-idempotência.
-E2E
-cadastro;
-login;
-carrinho;
-checkout;
-pagamento;
-confirmação do pedido;
-histórico de pedidos;
-logout.
-Exploratórios
-usabilidade;
-mensagens;
-comportamento em falhas;
-interrupções de rede;
-inconsistências visuais;
-cenários não previstos.
+- representarem riscos P0 ou P1;
+- forem repetitivos;
+- possuírem resultado determinístico;
+- dependerem de regras de negócio estáveis;
+- forem adequados para execução em CI/CD;
+- não dependerem de validações exclusivamente visuais ou subjetivas.
+
+## 5. Cobertura inicial planejada
+
+### API
+
+- autenticação;
+- cadastro;
+- cálculo de valores;
+- cupons;
+- estoque;
+- pagamentos;
+- pedidos;
+- autorização;
+- idempotência.
   
