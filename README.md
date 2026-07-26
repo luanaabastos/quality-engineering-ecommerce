@@ -61,33 +61,65 @@ Os cenários foram classificados em:
 - Node.js
 - GitHub Actions
 - Page Object Model
+- APIRequestContext
 - REST API
 - Docker
+
+## Cenários de API automatizados
+
+| ID | Cenário | Método | Status |
+|---|---|---|---|
+| API-001 | Consultar um post existente | GET | Automatizado |
+| API-002 | Consultar recurso inexistente | GET | Automatizado |
+| API-003 | Criar um novo post | POST | Automatizado |
+| API-004 | Atualizar um post existente | PUT | Automatizado |
+| API-005 | Excluir um post existente | DELETE | Automatizado |
+| API-006 | Listar todos os posts | GET | Automatizado |
+| API-007 | Filtrar posts por usuário | GET | Automatizado |
+| API-008 | Retornar lista vazia para usuário inexistente | GET | Automatizado |
+| API-009 | Documentar criação sem título | POST | Automatizado |
+| API-010 | Consultar posts com filtros parametrizados | GET | Automatizado |
+
+### Executar somente os testes de API
+
+```bash
+npx playwright test tests/api --project=chromium
+```
+
+### Executar somente os testes Web
+
+npx playwright test tests/web --project=chromium
+
+### Executar a verificação de tipos
+
+npx tsc -p tsconfig.json --noEmit
+
 
 ## Estrutura do projeto
 
 ```text
-quality-engineering-ecommerce/
-├── docs/
-│   ├── product-overview.md
-│   ├── risk-matrix.md
-│   ├── test-scenarios.md
-│   └── test-strategy.md
-├── tests/
-│   ├── pages/
-│   │   ├── cart.page.ts
-│   │   ├── checkout.page.ts
-│   │   ├── login.page.ts
-│   │   ├── products.page.ts
-│   │   └── register.page.ts
-│   └── web/
-│       ├── cart.spec.ts
-│       ├── checkout.spec.ts
-│       ├── logout.spec.ts
-│       └── register.spec.ts
-├── playwright.config.ts
-├── package.json
-└── README.md
+tests/
+├── api/
+│   ├── posts.spec.ts
+│   └── posts-coverage.spec.ts
+├── fixtures/
+│   ├── api.fixture.ts
+│   └── posts.data.ts
+├── pages/
+│   ├── cart.page.ts
+│   ├── checkout.page.ts
+│   ├── login.page.ts
+│   ├── products.page.ts
+│   └── register.page.ts
+├── types/
+│   └── post.types.ts
+└── web/
+    ├── auth.spec.ts
+    ├── cart.spec.ts
+    ├── checkout.spec.ts
+    ├── logout.spec.ts
+    ├── register.spec.ts
+    └── smoke.spec.ts
 ```
 
 ## Pré-requisitos
@@ -97,3 +129,40 @@ Para executar o projeto, é necessário ter instalado:
 - Node.js;
 - npm;
 - Git.
+
+
+## Resultado das Sprints
+
+### Sprint 1 — Automação Web
+
+- 9 testes Web automatizados;
+- Page Object Model implementado;
+- cenários positivos e negativos;
+- execução paralela;
+- integração contínua com GitHub Actions;
+- suíte Web aprovada.
+
+### Sprint 2 — Automação de API
+
+- 10 testes de API automatizados;
+- cobertura dos métodos GET, POST, PUT e DELETE;
+- validação de status codes;
+- validação de headers;
+- validação de estruturas JSON;
+- uso de filtros por query string;
+- payloads reutilizáveis;
+- contratos tipados com TypeScript;
+- fixture com `APIRequestContext`;
+- checagem estática com `tsc --noEmit`;
+- jobs separados no GitHub Actions.
+
+### Resultado atual
+
+- 9 testes Web;
+- 10 testes de API;
+- 19 testes automatizados no total;
+- 19 testes aprovados na regressão completa;
+- 3 jobs independentes no pipeline:
+  - TypeScript type check;
+  - API tests;
+  - Web tests.
