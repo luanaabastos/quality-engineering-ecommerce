@@ -1,4 +1,5 @@
 import { test, expect } from '../fixtures/api.fixture';
+import type { Post } from '../types/post.types';
 
 test.describe('Cobertura complementar da API de posts', () => {
   test('API-006 - listar todos os posts', async ({ apiContext }) => {
