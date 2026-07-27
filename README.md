@@ -1,7 +1,19 @@
+![Playwright Tests](https://github.com/luanaabastos/quality-engineering-ecommerce/actions/workflows/playwright.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/luanaabastos/quality-engineering-ecommerce)
+![License](https://img.shields.io/github/license/luanaabastos/quality-engineering-ecommerce)
+![TypeScript](https://img.shields.io/badge/TypeScript-7.x-blue)
+![Playwright](https://img.shields.io/badge/Playwright-Testing-green)
+
+
 # Quality Engineering E-commerce
 
-Case completo de Quality Engineering aplicado a uma plataforma de e-commerce, com foco em estratégia de qualidade, análise de riscos, cenários de teste, automação Web e API e integração contínua.
+![Playwright Tests](https://github.com/luanaabastos/quality-engineering-ecommerce/actions/workflows/playwright.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/luanaabastos/quality-engineering-ecommerce)
+![License](https://img.shields.io/github/license/luanaabastos/quality-engineering-ecommerce)
+![TypeScript](https://img.shields.io/badge/TypeScript-7.x-blue)
+![Playwright](https://img.shields.io/badge/Playwright-Testing-green)
 
+Case completo de Quality Engineering aplicado a uma plataforma de e-commerce, com foco em estratégia de qualidade, análise de riscos, cenários de teste, automação Web e API e integração contínua.
 
 
 ## Objetivo
@@ -13,6 +25,7 @@ A abordagem adotada é baseada em riscos, priorizando fluxos com maior impacto f
 ## Escopo
 
 O case contempla:
+
 
 - cadastro e autenticação de usuários;
 - catálogo de produtos;
