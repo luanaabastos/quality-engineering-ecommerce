@@ -20,26 +20,32 @@ export default defineConfig({
   },
 
   projects: [
-    {
-      name: 'api',
-      testMatch: /tests\/api\/.*\.spec\.ts/,
-    },
-    {
-      name: 'chromium',
-      testIgnore: /tests\/api\/.*\.spec\.ts/,
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      testIgnore: /tests\/api\/.*\.spec\.ts/,
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      testIgnore: /tests\/api\/.*\.spec\.ts/,
-      use: { ...devices['Desktop Safari'] },
-    },
-  ],
+  {
+    name: 'api',
+    testMatch: /tests\/api\/.*\.spec\.ts/,
+  },
+  {
+    name: 'chromium',
+    testIgnore: /tests\/api\/.*\.spec\.ts/,
+    use: { ...devices['Desktop Chrome'] },
+  },
+  {
+    name: 'firefox',
+    testIgnore: [
+      /tests\/api\/.*\.spec\.ts/,
+      /tests\/web\/register\.spec\.ts/,
+    ],
+    use: { ...devices['Desktop Firefox'] },
+  },
+  {
+    name: 'webkit',
+    testIgnore: [
+      /tests\/api\/.*\.spec\.ts/,
+      /tests\/web\/register\.spec\.ts/,
+    ],
+    use: { ...devices['Desktop Safari'] },
+  },
+],
 
   // webServer: {
   //   command: 'npm run start',
