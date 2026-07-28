@@ -347,6 +347,21 @@ Os relatórios são publicados como artifacts separados:
 - `playwright-web-report`.
 
 
+## Evidências
+
+### Pipeline no GitHub Actions
+
+![Pipeline com type check, API e Web aprovados](docs/evidence/github-actions.png)
+
+### Relatório Playwright
+
+![Relatório da suíte automatizada com 44 testes aprovados e 1 ignorado](docs/evidence/playwright-report.png)
+
+### Release v1.0.0
+
+![Primeira release estável do projeto](docs/evidence/release-v1.0.0.png)
+
+
 
 ### Resultado atual
 
