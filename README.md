@@ -1,10 +1,3 @@
-![Playwright Tests](https://github.com/luanaabastos/quality-engineering-ecommerce/actions/workflows/playwright.yml/badge.svg)
-![Release](https://img.shields.io/github/v/release/luanaabastos/quality-engineering-ecommerce)
-![License](https://img.shields.io/github/license/luanaabastos/quality-engineering-ecommerce)
-![TypeScript](https://img.shields.io/badge/TypeScript-7.x-blue)
-![Playwright](https://img.shields.io/badge/Playwright-Testing-green)
-
-
 # Quality Engineering E-commerce
 
 ![Playwright Tests](https://github.com/luanaabastos/quality-engineering-ecommerce/actions/workflows/playwright.yml/badge.svg)
@@ -117,6 +110,39 @@ tests/
     └── smoke.spec.ts
 ```
 
+
+## Arquitetura da automação
+
+```mermaid
+flowchart TD
+    A[GitHub Actions] --> B[TypeScript type check]
+    A --> C[Testes de API]
+    A --> D[Testes Web]
+
+    C --> E[APIRequestContext]
+    E --> F[Fixtures e payloads]
+    E --> G[Contratos Zod]
+    E --> H[Performance smoke]
+
+    D --> I[Chromium]
+    D --> J[Firefox]
+    D --> K[WebKit]
+
+    I --> L[Page Object Model]
+    J --> L
+    K --> L
+
+    L --> M[Login]
+    L --> N[Cadastro]
+    L --> O[Carrinho]
+    L --> P[Checkout]
+    L --> Q[Logout]
+
+    D --> R[Acessibilidade com Axe]
+
+    C --> S[Relatório API]
+    D --> T[Relatório Web]
+```
 
 ## Pré-requisitos
 
@@ -339,15 +365,13 @@ Os relatórios são publicados como artifacts separados:
 
 ## Próximas etapas
 
-- - avaliar a conteinerização do projeto com Docker;
+- avaliar a conteinerização do projeto com Docker;
 
 
 ### Preparação para portfólio
 
-- adicionar badges ao README;
-- incluir um diagrama da arquitetura de testes;
 - adicionar evidências visuais das execuções;
 - revisar a apresentação dos resultados;
-- criar uma release inicial;
 - documentar decisões técnicas;
-- preparar uma apresentação resumida do projeto.
+- preparar uma apresentação resumida do projeto;
+- avaliar a conteinerização com Docker..
